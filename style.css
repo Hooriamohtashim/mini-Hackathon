@@ -177,52 +177,63 @@ h1 {
 
 }
 
-#cart-modal{
+#cart-modal {
     position: fixed;
-    transform: translate(-50% , -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: white;
-    padding:20px;
-    border:1px solid #ddd;
+    padding: 20px;
+    border: 1px solid #ddd;
     display: none;
-    width:300px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 8px;
 }
 
-#cart-items{
+#cart-items {
     max-height: 200px;
     overflow-y: auto;
 }
-#cart-total{
+
+#cart-total {
     font-weight: bold;
 }
-#view-cart{
+
+#view-cart {
     background-color: #109ee5;
-    color:white;
+    color: white;
     border: none;
     cursor: pointer;
 }
-#product-silder{
+
+#product-silder {
     display: flex;
     overflow: hidden;
     width: 80%;
-    margin:20px auto ;
+    margin: 20px auto;
     justify-content: space-around;
 }
-.slider-item img{
-    width:30%;
-    height:auto;
+
+.slider-item img {
+    width: 30%;
+    height: auto;
 }
-.slider-item h3{
-margin-top: 10px;
+
+.slider-item h3 {
+    margin-top: 10px;
 }
-.btns{
-    width:140px;
-    height:30px;
+
+.btns {
+    width: 140px;
+    height: 30px;
     border: 1px solid rgb(113, 111, 111);
     border-radius: 30px;
     margin-top: 20px;
     background-color: transparent;
 }
+
 .icon {
     border: 1px solid black;
     border-radius: 50%;
@@ -242,93 +253,57 @@ margin-top: 10px;
     margin-top: 40px;
 }
 
-.section7{
+.section7 {
     margin-left: 90px;
 }
-.sec7-h1{
+
+.sec7-h1 {
     color: rgb(48, 168, 215);
     padding-top: 50px;
-    font-size:25px;
+    font-size: 25px;
 }
-.section8{
-    margin-top:60px;
+
+.section8 {
+    margin-top: 60px;
     padding-left: 90px;
 
 }
-/* .slider-container {
-    width: 100%;
-    max-width: 900px;
+
+
+.faq-container {
+
+    width: 590px !important;
     margin: auto;
-    overflow: hidden;
-  }
-  
-  /* Slider styling 
-  .slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  /* Each row of 3 products 
-  .product-row {
-    display: flex;
-  }
-  
-  /* Individual product styling 
-  .product {
-    width: 33.33%; /* 3 products per row
-    padding: 10px;
-    box-sizing: border-box;
-    text-align: center;
-  }
-  
-  .product img {
-    width: 100%;
-    height: auto;
-  }
-  
-  
-  #cart-items {
-    margin: 20px 0;
-  }
-  .form-container {
-    background: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  } */
-.faq-container{
- 
-    width:590px !important;
-margin: auto;
     font-family: Arial, Helvetica, sans-serif;
 }
-.faq-item{
-    border:1px solid black;
+
+.faq-item {
+    border: 1px solid black;
     margin-bottom: 10px;
 }
-.faq-q{
+
+.faq-q {
     background-color: #f5f5f5;
-    border:none ;
-    padding:15px;
-width:100%;
+    border: none;
+    padding: 15px;
+    width: 100%;
     text-align: left;
     font-size: 16px;
-    display: flex ;
+    display: flex;
     justify-content: space-between !important;
     align-items: center !important;
 }
 
-.faq-q :focus{
+.faq-q :focus {
     outline: none;
 }
 
-.faq-a{
+.faq-a {
     display: none;
-    padding:40px;
+    padding: 40px;
     font-size: 14px;
     background-color: #fff;
-    color:#333;
+    color: #333;
 
 }
 
@@ -338,7 +313,7 @@ width:100%;
     cursor: pointer;
 }
 
-.sec8{
+.sec8 {
     display: flex;
     gap: 120px;
     align-items: center;
@@ -349,83 +324,126 @@ width:100%;
     padding: 50px;
     position: relative;
 }
+
 label {
     display: block;
-   margin-top: 20px;
-  }
-  
-  input,
-  textarea {
+    margin-top: 20px;
+}
+
+input,
+textarea {
     margin-top: 4px;
     padding: 8px;
     border: 1px solid black;
     border-radius: 4px;
-    
-  }
-  textarea {
+
+}
+
+textarea {
     width: 350px;
-  }
-  
-  .sec8-btn{
-    width:350px;
+}
+
+.sec8-btn {
+    width: 350px;
     height: 40px;
     margin-top: 50px;
-    color:white;
+    color: white;
     border: 1px black;
     border-radius: 6px;
     background-color: rgb(42, 173, 225);
-   
-  }
-  .radio {
+
+}
+
+.radio {
     display: flex;
-  }
-  
-  .radio:checked {
+}
+
+.radio:checked {
     color: pink !important;
-  }
-  
-  .sec8-img h5 {
+}
+
+.sec8-img h5 {
     font-size: 40px;
-  }
-  .footer{
-    width:100%;
-    height:300px;
+}
+
+.footer {
+    width: 100%;
+    height: 300px;
     background-color: rgb(30, 182, 243);
     border-top-right-radius: 40%;
     border-top-left-radius: 40%;
     margin-top: -100px;
-  
-  }
-  .footer-p{
-    color:white;
-display: flex;
-align-items: end !important;
+
 }
 
-.cart-modal{
+.footer-p {
+    color: white;
+    display: flex;
+    align-items: end !important;
+}
+
+#cart-count {
+    color: white;
+    width: 10px;
+    height: 10px;
+    padding: 3px 4px;
+    font-size: 0.5rem;
+    background-color: grey;
+    border-radius: 6px;
+    position: absolute;
+    top: 10;
+    border: none;
+}
+ .cart-modal {
     position: fixed;
-    left:0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-.cart-content{
-    background-color: #fff;
-    padding:20px;
-    border-radius:5px;
+    right: 0;
+    top: 0;
     width: 300px;
-    text-align: center;
+    height: 100%;
+    background: #f9f9f9;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+
 }
- #cart-items{
-    list-style: none;
-    padding:0;
-    margin:0 0 15px;
- }
- #cart-items li {
-    margin: 5px 0;
- }
+
+.closecart {
+    width: 25%;
+    position: fixed;
+    background-color: #3498db;
+    color: white;
+    padding: 1rem;
+    bottom: 3rem;
+}
+
+.clearcart {
+    width: 25%;
+    position: fixed;
+    background-color: #3498db;
+    color: white;
+    padding: 1rem;
+    bottom: 0;
+}
+
+.cart-hidden {
+    visibility: hidden;
+}
+
+.cart-section.visible {
+    visibility: visible;
+}
+
+
+
+
+.shop-now {
+    color: #333;
+    padding: 0.7rem 1.5rem;
+    border: 1px solid #333;
+    border-radius: 25px;
+}
 @media screen and (max-width:750px) {
     .nav-links {
         display: block;

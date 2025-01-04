@@ -27,12 +27,10 @@
                 <li class="nav-item"><a href="#">Contact Us</a> </li>
                 <li class="nav-item"><a href="#">Recipe</a></li>
                 <div>
-                    <img src="Images\basketicon.png" id="" alt="basketicon" style="width: 60px; height:40px; border:1px olid black ; border-radius: 50%;">
-              <span class="cart-count">0</span>
+                   
+              <span  onclick="toggleCart();"> <i class="fa-solid fa-cart-shopping"></i> <span id="cart-count">0</span></span>
                 </div>
             </ul>
-
-          
         </nav>
     </div>
 
@@ -48,9 +46,9 @@
             </div>
             <div class="div1">
                 <img src="Images\cds_450_v2-1.png" class="img1" alt="hero-section img">
-
+                
             </div>
-
+           
         </div>
         
 
@@ -201,7 +199,7 @@
         <div class="sec6-div2">
             <div class="icon" style="margin: 89px;"><i class="fa-solid fa-less-than" style="padding-top: 13px;"></i>
             </div>
-            <div class="product" data-id="1" data-name="CDS22-formula" data-price="500.00">
+            <div >
                 <img src="Images\cds_450_v2-1.png" alt="img2" style="width: 280px;">
                 <h2
                     style="margin:0px !important;   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
@@ -209,9 +207,9 @@
                 <h4 style="margin:0px !important; color:rgb(243, 1, 49) ; font-size: large;">900 billion sachets</h4>
                 <br>
                 <p style="margin:0px !important; ">Superior power<br> Potency: 900 billion live bacteria per sachet</p>
-                <button class="btns shop-now" style="margin-top: 80px;">Shop Now</button>
+                <button class="btns shop-now"  data-id="1" data-name="CDS22-formula" data-price="500.00" type="submit" style="margin-top: 80px;">Shop Now</button>
             </div>
-            <div class="product" data-id="2" data-name="CDS22-formula" data-price="400.00">
+            <div >
                 <img src="Images\cds_112_v2-1.png" alt="img1" style="width: 280px;">
                 <h2
                     style="margin:0px !important;   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
@@ -221,9 +219,9 @@
                 <p style="margin:0px !important; ">Strong and convenient <br>
                     Potency: 450 billion live bacteria per sachet  <br>
                     Format: Box of 12 sachets</p>
-                <button class="btns shop-now" style="margin-top: 60px;">Shop Now</button>
+                <button class="btns shop-now" data-id="2" data-name="CDS22-formula" data-price="400.00"  type="submit" style="margin-top: 60px;">Shop Now</button>
             </div >
-            <div class="product" data-id="3" data-name="CDS22-formula" data-price="300.00">
+            <div >
                 <img src="Images\img2.png" alt="img1" style="width: 280px;">
                 <h2
                     style="margin:0px !important;   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
@@ -233,36 +231,17 @@
                 <p style="margin:0px !important; ">Efficient and flexible <br>
                     Potency: 112 billion live bacteria per capsule  <br>
                     Format: Box of 20 individually packaged capsules</p>
-                <button class="btns shop-now">Shop Now</button>
+                <button class="btns shop-now" class="product" data-id="3" data-name="CDS22-formula" data-price="300.00" type="submit">Shop Now</button>
             </div>
             <div class="icon" style="margin: 89px;"><i class="fa-solid fa-greater-than" style="padding-top: 13px;"></i>
             </div>
         </div>
-<div id="cart-modal" style="display: none;">
+ <div id="cart-modal" class="cart-hidden">
+    <h2>cart</h2>
     <div class="cart-items"></div>
-    <div class="cart-total">total : Rs</div>
-    <button id="close-cart">Close Cart</button>
-</div>
-    
-<button id="view-cart" style="position: fixed; bottom:20px; right:20px; padding:10px 20px">view Cart</button>
-
-<div id="product-slider">
-    <div class="slider-item">
-        <img src="Images\cds_112_v2-1.png" alt="img">
-        <h3>CDS22-formula</h3>
-    </div>
-    <div class="slider-item">
-        <img src="Images\cds_450_v2-1.png" alt="img">
-        <h3>CDS22-formula</h3>
-    </div>
-    <div class="slider-item">
-        <img src="Images\cds_112_v2-1.png" alt="img">
-        <h3>CDS22-formula</h3>
-    </div>
-    <div class="slider-item">
-        <img src="Images\cds_450_v2-1.png" alt="img">
-        <h3>CDS22-formula</h3>
-    </div>
+    <div class="cart-total">Total : Rs</div>
+    <button class="clearcart" onclick="clearCart()"> clear cart</button>
+    <button class="closecart" onclick="closeCart()">close cart</button>
 </div>
     </div>
     <hr style="width: 990px ; margin-top: 30px;">
@@ -361,33 +340,8 @@
             </div>
         </div> 
     </div>
-    <!-- <div class="wavy-background2">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150">
-        <path
-          fill="#007BFF"
-          fill-opacity="1"
-          d="M0,32L60,48C120,64,240,96,360,106.7C480,117,600,106,720,90.7C840,75,960,53,1080,48C1200,43,1320,53,1380,58.7L1440,64L1440,150L1380,150C1320,150,1200,150,1080,150C960,150,840,150,720,150C600,150,480,150,360,150C240,150,120,150,60,150L0,150Z"
-        ></path>
-      </svg>
-    </div>  
-     <div class="wavy-background1">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#e7008a"
-          fill-opacity="1"
-          d="M0,64L60,96C120,128,240,192,360,213.3C480,235,600,213,720,181.3C840,149,960,107,1080,96C1200,85,1320,107,1380,117.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-        ></path>
-      </svg>
-    </div> 
-    <div class="wavy-background3">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150">
-        <path
-          fill="#D2B48C"
-          fill-opacity="1"
-          d="M0,32L60,48C120,64,240,96,360,106.7C480,117,600,106,720,90.7C840,75,960,53,1080,48C1200,43,1320,53,1380,58.7L1440,64L1440,150L1380,150C1320,150,1200,150,1080,150C960,150,840,150,720,150C600,150,480,150,360,150C240,150,120,150,60,150L0,150Z"
-        ></path>
-      </svg>
-    </div>-->
+    
+
 
     
         <div class="sec8">
@@ -423,14 +377,7 @@
 
     </div>
 
-    <div id="cart-modal" class="cart-modal" style="display: none;">
-        <div class="cart-content">
-            <h3>Your Cart</h3>
-            <ul id="cart-items"></ul>
-            <p>Total: Rs <span id="cart-total">0.00</span></p>
-            <button id="close-cart">Close</button>
-        </div>
-    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
     <script src="index.js"></script>
 </body>

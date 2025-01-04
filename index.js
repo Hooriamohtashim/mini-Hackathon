@@ -47,55 +47,74 @@ const saveMessages = (name, email, message) => {
     });
 };
 
-const cart = [];
-const cartModal = document.getElementById("cart-modal");
+
+
+let cart = [];
+const cartCount = document.getElementById("cart-count");
 const cartItems = document.getElementById("cart-items");
 const cartTotal = document.getElementById("cart-total");
-const closeCart = document.getElementById("close-cart");
-const viewCartButton = document.getElementById("view-cart");
+const cartModal = document.getElementById("cart-modal");
+function toggleCart() {
+    cartModal.classList.toggle("visible");
+}
+document.querySelectorAll(".shop-now").forEach(button => {
+    button.addEventListener("click", () => {
+        const productName = button.getAttribute("data-name");
+        const productPrice = parseFloat(button.getAttribute("data-price"));
+        const existingProduct = cart.find(item => item.name === productName);
+        if (existingProduct) {
+            existingProduct.quantity++;
+        } else {
+            cart.push({ name: productName, price: productPrice, quantity: 1 });
+        }
 
-document.querySelectorAll(".shop-now").forEach((button) =>{
-    button.addEventListener("click" , (e) => {
-        const product = e.target.closest(".product");
-        const productId = product.dataset.id;
-        const productName = product.databset.name;
-        const productPrice = parseFloat(product.database.price);
-
-        cart.push({id:productId, name:productName, price:productPrice});
-    CartUpdate();
-    })
-})
-
-function CartUpdate() {
-    cartItems.innerHTML="";
-    let total = 0 ;
-
-
-cart.forEach((item) => {
-    const li = document.createElement("li");
-    li.textContent= `${item.name} - $${item.price.toFixed(2)}`;
-    cartItems.appendChild(li);
-    total += item.price;
+        CartUpdate();
+    });
 });
 
-cartTotal.textContent = `Total: $${total.toFixed(2)}`;
-}
 
-function showCart (){
-    cartModal.style.display = "none";
+function CartUpdate() {
+    cartItems.innerHTML = "";
+    let total = 0;
 
-}
-
-closeCart.addEventListener("click" , showCart);
-
-let currentIndex = 0 ;
-const SliderItems = document.querySelectorAll(".slider-item");
-const totalItems = SliderItems.length;
-
-setInterval(() => {
-    currentIndex = (currentIndex + 1) % totalItems;
-    SliderItems.forEach((item,index) => {
-        item.style.transform = `translateX(-${currentIndex * 100}%)`;
-
+    cart.forEach(item => {
+        total += item.price * item.quantity;
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+                <span>${item.name}</span>
+                <span>$${item.price}</span>
+                <span>
+                    <button onclick="decrease('${item.name}')">-</button>
+                    ${item.quantity}
+                    <button onclick="increase('${item.name}')">+</button>
+                </span>
+            `;
+        cartItems.appendChild(cartItem);
     });
-} ,3000 )
+
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+
+function decrease(productName) {
+    productName.quauntity--;
+    CartUpdate();
+}
+
+function increase(productName) {
+    productName.quauntity++;
+    CartUpdate();
+}
+
+
+function clearCart() {
+    cart = [];
+    CartUpdate();
+}
+
+function closeCart() {
+    var modal = document.querySelector("#cart-modal");
+    modal.classList.remove("visible");
+}
